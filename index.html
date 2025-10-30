@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>给妈妈的生日祝福</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #d63384;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .subtitle {
+            color: #6f42c1;
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+        }
+        
+        .cake {
+            width: 200px;
+            height: 150px;
+            margin: 30px auto;
+            position: relative;
+        }
+        
+        .layer {
+            position: absolute;
+            border-radius: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .layer-bottom {
+            width: 200px;
+            height: 50px;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            bottom: 0;
+        }
+        
+        .layer-middle {
+            width: 160px;
+            height: 45px;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            bottom: 50px;
+        }
+        
+        .layer-top {
+            width: 120px;
+            height: 40px;
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            bottom: 95px;
+        }
+        
+        .candles {
+            position: absolute;
+            bottom: 135px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+        }
+        
+        .candle {
+            width: 8px;
+            height: 30px;
+            background: #fff;
+            position: relative;
+            border-radius: 4px;
+        }
+        
+        .candle::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background: #f1c40f;
+            border-radius: 50%;
+            animation: flame 1.5s infinite alternate;
+        }
+        
+        @keyframes flame {
+            0% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+            100% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .blessing-popup {
+            position: fixed;
+            padding: 15px 25px;
+            border-radius: 15px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 1000;
+            animation: popupAppear 0.5s ease-out, popupDisappear 0.5s ease-in 2s forwards;
+            max-width: 250px;
+        }
+        
+        @keyframes popupAppear {
+            0% { transform: scale(0.5) translateY(20px); opacity: 0; }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        
+        @keyframes popupDisappear {
+            0% { transform: scale(1) translateY(0); opacity: 1; }
+            100% { transform: scale(0.5) translateY(-20px); opacity: 0; }
+        }
+        
+        .message {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: left;
+            line-height: 1.6;
+        }
+        
+        .heart {
+            color: #e74c3c;
+            animation: heartbeat 1.5s ease-in-out infinite both;
+            display: inline-block;
+        }
+        
+        @keyframes heartbeat {
+            from { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            to { transform: scale(1); }
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .cake { transform: scale(0.8); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1><span class="heart">❤</span> 妈妈，生日快乐！ <span class="heart">❤</span></h1>
+            <p class="subtitle">愿这一天充满欢笑和美好的回忆</p>
+            
+            <div class="cake">
+                <div class="layer layer-top"></div>
+                <div class="layer layer-middle"></div>
+                <div class="layer layer-bottom"></div>
+                <div class="candles">
+                    <div class="candle"></div>
+                    <div class="candle"></div>
+                    <div class="candle"></div>
+                    <div class="candle"></div>
+                    <div class="candle"></div>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="startBlessings()">点击接收祝福</button>
+            
+            <div class="message">
+                <h3>亲爱的妈妈：</h3>
+                <p>在这个特别的日子里，我想对您说声生日快乐！感谢您一直以来的关爱和付出。您是我生命中最重要的人，您的爱如春风般温暖，如阳光般明亮。</p>
+                <p>愿您在新的一岁里健康、快乐、幸福！愿每一天都充满欢笑，愿岁月对您温柔以待。</p>
+                <p style="text-align: right; margin-top: 20px;">—— 爱您的孩子 ❤</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="blessing-popups"></div>
+    
+    <script>
+        // 祝福语列表
+        const blessings = [
+            "妈妈，生日快乐！",
+            "祝妈妈永远年轻漂亮！",
+            "妈妈您辛苦了！",
+            "祝妈妈健康长寿！",
+            "妈妈我爱您！",
+            "您是世界上最棒的妈妈！",
+            "感谢妈妈的养育之恩！",
+            "祝妈妈天天开心！",
+            "妈妈，您是我生命中最重要的人！",
+            "愿妈妈永远幸福安康！"
+        ];
+        
+        // 颜色列表
+        const colors = [
+            "#e74c3c", "#3498db", "#2ecc71", "#9b59b6", "#f1c40f",
+            "#1abc9c", "#d35400", "#34495e", "#e67e22", "#16a085"
+        ];
+        
+        let popupCount = 0;
+        const maxPopups = 20;
+        
+        // 开始祝福动画
+        function startBlessings() {
+            document.querySelector('.btn').disabled = true;
+            document.querySelector('.btn').textContent = "祝福传递中...";
+            popupCount = 0;
+            createPopup();
+        }
+        
+        // 创建弹窗
+        function createPopup() {
+            if (popupCount >= maxPopups) {
+                document.querySelector('.btn').disabled = false;
+                document.querySelector('.btn').textContent = "再次接收祝福";
+                return;
+            }
+            
+            popupCount++;
+            
+            const blessing = blessings[Math.floor(Math.random() * blessings.length)];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            // 创建弹窗元素
+            const popup = document.createElement('div');
+            popup.className = 'blessing-popup';
+            popup.textContent = blessing;
+            popup.style.background = `linear-gradient(135deg, ${color}, ${darkenColor(color, 20)})`;
+            
+            // 随机位置
+            const x = Math.random() * (window.innerWidth - 250);
+            const y = Math.random() * (window.innerHeight - 100);
+            popup.style.left = `${x}px`;
+            popup.style.top = `${y}px`;
+            
+            document.getElementById('blessing-popups').appendChild(popup);
+            
+            // 2.5秒后移除弹窗
+            setTimeout(() => {
+                if (popup.parentNode) {
+                    popup.parentNode.removeChild(popup);
+                }
+            }, 2500);
+            
+            // 创建下一个弹窗
+            setTimeout(createPopup, 300);
+        }
+        
+        // 颜色变暗函数
+        function darkenColor(color, percent) {
+            const num = parseInt(color.slice(1), 16);
+            const amt = Math.round(2.55 * percent);
+            const R = (num >> 16) - amt;
+            const G = (num >> 8 & 0x00FF) - amt;
+            const B = (num & 0x0000FF) - amt;
+            return "#" + (0x1000000 + (R < 0 ? 0 : R) * 0x10000 + (G < 0 ? 0 : G) * 0x100 + (B < 0 ? 0 : B)).toString(16).slice(1);
+        }
+        
+        // 页面加载完成后自动播放一次祝福
+        window.addEventListener('DOMContentLoaded', function() {
+            setTimeout(startBlessings, 1000);
+        });
+    </script>
+</body>
+</html>
